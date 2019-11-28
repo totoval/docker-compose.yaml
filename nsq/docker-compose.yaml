@@ -12,7 +12,7 @@ services:
   nsqd:
     image: nsqio/nsq:v1.1.0
     container_name: nsqd
-    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --data-path=/data
+    command: /nsqd --lookupd-tcp-address=nsqlookupd:4160 --data-path=/data -broadcast-address=nsqd
     volumes:
       - "./nsq:/data"
     depends_on:
